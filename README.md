@@ -27,11 +27,12 @@
 Follow these steps to get the project up and running on your local machine:
 
 1. Clone the Repository
-git clone https://github.com/your-username/drink-of-the-day.git
-cd drink-of-the-day
+> git clone
+> 
+> cd 
 
 2. Install Dependencies
-npm install
+> npm install
 
 3. Start the Server
 
