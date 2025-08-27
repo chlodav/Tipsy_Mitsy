@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tipsy - Random Drink</title>
+    <link rel="icon" type="image/png" href="img/martini.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="left-side">
+      <h1>Your Drink for tonight is</h1>
+
+      <p class="text"><%= drinkName %></p>
+
+      <form class="form" action="/" method="get">
+        <button type="submit" class="btn">Get New Drink</button>
+      </form>
+    </div>
+
+    <div class="card" style="background-image: url('<%= drinkImage %>')">
+      <p class="title_small">Ingredients:</p>
+      <ul class="ingredients">
+   <% 
+      const ingredients = Array.isArray(drinkIngr) ? drinkIngr : (drinkIngr ? drinkIngr.split(',') : []);
+      ingredients.forEach(ingr => { 
+    %>
+      <li><%= ingr.trim() %></li>
+    <% }); %>
+  </ul>
+
+   <hr class="divider" />
+   
+      <p class="title_small" >Recipe:</p>
+      <p class="recipe"><%= recipe %></p>
+    </div>
+    <script src="scripts/animation.js"></script>
+  </body>
+</html>
